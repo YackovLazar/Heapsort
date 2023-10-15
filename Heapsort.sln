@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heapsort", "Heapsort\Heapsort.csproj", "{DA319EFC-06FA-45B1-A239-4A9D39DA9725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapsortTests", "HeapsortTests\HeapsortTests.csproj", "{2685CB77-31BE-4F00-BAD7-9B90102F6E57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA319EFC-06FA-45B1-A239-4A9D39DA9725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA319EFC-06FA-45B1-A239-4A9D39DA9725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA319EFC-06FA-45B1-A239-4A9D39DA9725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA319EFC-06FA-45B1-A239-4A9D39DA9725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2685CB77-31BE-4F00-BAD7-9B90102F6E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2685CB77-31BE-4F00-BAD7-9B90102F6E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2685CB77-31BE-4F00-BAD7-9B90102F6E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2685CB77-31BE-4F00-BAD7-9B90102F6E57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA30E5DD-0C6E-45DB-B2FE-6B84CAC9D40D}
+	EndGlobalSection
+EndGlobal
