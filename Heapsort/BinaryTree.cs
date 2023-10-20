@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.ObjectModel;
 
 namespace Heapsort;
 
@@ -6,6 +7,44 @@ public class BinaryTree<T>
 {
     public Node<T>? Root { get; set; }
     public Node<T>? Last;
+
+    public BinaryTree()
+    {
+
+    }
+
+    public BinaryTree(Collection<T> data)
+    {
+        if (data.Count == 0)
+        {
+            return;
+        }
+
+        var nodes = data.Select(x => new Node<T>(x)).ToList();
+
+        Treeify(nodes);
+    }
+
+    private void Treeify(List<Node<T>> nodes)
+    {
+        Last = nodes[^1];
+
+        Root = ConstructTree(nodes, 0);
+    }
+
+    private Node<T> ConstructTree(List<Node<T>> nodes, int index)
+    {
+        if (index >= nodes.Count)
+        {
+            return null!;
+        }
+
+        var node = nodes[index];
+        node.Left = ConstructTree(nodes, 2 * index + 1);
+        node.Right = ConstructTree(nodes, 2 * index + 2);
+
+        return node;
+    }
 
 
     public Node<T>? FindLastEligible(Node<T>? node)
@@ -69,9 +108,15 @@ public class BinaryTree<T>
         return FindNextEmptyNode(node?.Left) ?? node;
     }
 
-    public void BinarySort()
+    public List<T> BinarySort()
     {
+        if (Root == null)
+        {
+            return new List<T>();
+        }
+
         Node<T>? last = null;
+        List<T> array = new List<T>(Root?.Capacity ?? 0);
 
         Root!.Heapify();
         while (!Root.IsSet)
@@ -80,6 +125,7 @@ public class BinaryTree<T>
             Root.Heapify();
             Console.WriteLine($"Swap: {Root.Value} : {Last!.Value}");
             (Root.Value, Last!.Value) = (Last.Value, Root.Value);
+            array.Add(Last.Value);
             last ??= Last;
             Last!.IsSet = true;
             Console.WriteLine($"Set: {Last.Value}");
@@ -94,5 +140,6 @@ public class BinaryTree<T>
         Console.WriteLine("_______");
         Console.WriteLine($"Last: {Last!.Value}");
         Console.WriteLine("DONE");
+        return array;
     }
 }
